@@ -1,32 +1,15 @@
 <template>
-    <button @click="send('TOGGLE')">
-        {{ state.value === 'inactive' ? 'Click to activate' : 'Active! Click to deactivate' }}
-    </button>
+    <div qys-color="green">{{ props.propName }}</div>
 </template>
 
-<script lang="ts">
-import { createMachine } from 'xstate'
-
-const toggleMachine = createMachine({
-    id: 'toggle',
-    initial: 'inactive',
-    states: {
-        inactive: {
-            on: { TOGGLE: 'active' },
-        },
-        active: {
-            on: { TOGGLE: 'inactive' },
-        },
-    },
-})
-
-export default {
-    setup() {
-        const { state, send } = useMachine(toggleMachine)
-        return {
-            state,
-            send,
-        }
-    },
+<script lang="ts" setup>
+interface Props {
+    propName?: string
 }
+
+const props = withDefaults(defineProps<Props>(), {
+    propName: 'about 页面',
+})
 </script>
+
+<style lang="scss" scoped></style>

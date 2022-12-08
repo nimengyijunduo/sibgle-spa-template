@@ -31,21 +31,7 @@ export default defineConfig(({ command, mode }) => {
                     /\.vue$/,
                     /\.vue\?vue/, // .vue
                 ],
-                imports: [
-                    'vue',
-                    'vue-router',
-                    'pinia',
-                    '@vueuse/core',
-                    {
-                        '@xstate/vue': [
-                            'useMachine',
-                            'useActor',
-                            'useInterpret',
-                            'useSelector',
-                            'useSpawn',
-                        ],
-                    },
-                ],
+                imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
                 dts: './src/auto-import.d.ts',
                 eslintrc: {
                     enabled: false,
@@ -82,6 +68,7 @@ export default defineConfig(({ command, mode }) => {
         },
         server: {
             host: '0.0.0.0',
+            port: 4000,
             strictPort: true,
             open: true,
             proxy: {
