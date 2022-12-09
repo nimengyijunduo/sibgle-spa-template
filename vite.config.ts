@@ -9,7 +9,7 @@ import Unocss from 'unocss/vite'
 import eslintPlugin from 'vite-plugin-eslint'
 /** antD按需加载 */
 import Components from 'unplugin-vue-components/vite'
-import { HeadlessUiResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -36,6 +36,7 @@ export default defineConfig(({ command, mode }) => {
                 eslintrc: {
                     enabled: false,
                 },
+                resolvers: [ElementPlusResolver()],
             }),
             eslintPlugin({
                 include: [
@@ -49,7 +50,7 @@ export default defineConfig(({ command, mode }) => {
                 cache: false,
             }),
             Components({
-                resolvers: [HeadlessUiResolver()],
+                resolvers: [ElementPlusResolver()],
                 dirs: 'src/components',
                 extensions: ['vue', 'tsx', 'jsx'],
                 dts: true,

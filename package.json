@@ -15,8 +15,9 @@
         "dts": "vue-tsc --declaration --emitDeclarationOnly"
     },
     "dependencies": {
-        "@headlessui/vue": "^1.7.2",
+        "@element-plus/icons-vue": "^2.0.10",
         "@vueuse/core": "^9.1.1",
+        "element-plus": "^2.2.26",
         "pinia": "^2.0.17",
         "qiankun": "^2.8.4",
         "vue": "^3.2.37",
